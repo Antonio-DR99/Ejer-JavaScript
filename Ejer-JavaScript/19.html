@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumar Vector</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sumar Rango de Números</h1>
+
+        <p>Este programa suma todos los números dentro de un rango dado. Solo tienes que ingresar un número inicial y un número final, y el programa calculará la suma total de todos los números entre esos dos límites (inclusive).</p>
+
+        <input type="text" id="numInicio" placeholder="Ingresa el número inicial" class="input-field">
+        <input type="text" id="numFinal" placeholder="Ingresa el número final" class="input-field">
+        
+        <input type="button" onclick="sumarVector();" value="Calcular" class="btn">
+        
+        <input type="text" id="resultado" placeholder="Resultado de la suma" class="input-field" disabled>
+
+    </div>
+
+    <script>
+
+        function sumarVector() {
+            let numInicio = parseInt(document.getElementById('numInicio').value);
+            let numFinal = parseInt(document.getElementById('numFinal').value);
+        
+            let sumaTotal = 0;  // Variable para acumular la suma
+            let ArraysNumeros = [];  // Array para almacenar los números en el rango
+        
+            // Bucle para llenar el array con los números del rango y calcular la suma
+            for (let i = numInicio; i <= numFinal; i++) {
+                ArraysNumeros.push(i); // Agregar el número al array
+                sumaTotal += i;        // Acumular la suma
+            }
+        
+            // Mostrar la suma total en el campo de resultado
+            document.getElementById('resultado').value = sumaTotal;  //Asignar la suma al campo de resultado
+        }
+    </script>
+</body>
+</html>

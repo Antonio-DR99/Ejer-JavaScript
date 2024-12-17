@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Día Laboral</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Verificador de Día Laboral</h1>
+        <p>Este programa te permite ingresar un día de la semana para determinar si es un día laboral o de descanso. Escribe el día en el campo correspondiente y haz clic en "Calcular" para ver el resultado.</p>
+
+        <input type="text" id="dia" placeholder="Escribe el día">
+        <input type="text" id="resultado" placeholder="Resultado" readonly>
+        <input type="button" onclick="Ver();" value="Calcular">
+    </div>
+
+    <script type="text/javascript">
+        // Función para determinar si el día ingresado es laboral o no
+        function Ver(){
+            // Obtenemos el valor del día desde el input y lo convertimos a minúsculas para facilitar la comparación
+            let dia = document.getElementById('dia').value.toLowerCase(); 
+
+            // Utilizamos un switch para verificar qué día fue introducido
+            switch (dia) {
+                case 'lunes':
+                    // Si es lunes, mostramos "Trabajas"
+                    document.getElementById('resultado').value = "Trabajas";
+                    break;
+                case 'martes':
+                    // Si es martes, mostramos "Trabajas"
+                    document.getElementById('resultado').value = "Trabajas";
+                    break;
+                case 'miercoles':
+                    // Si es miércoles, mostramos "Trabajas"
+                    document.getElementById('resultado').value = "Trabajas";
+                    break;
+                case 'jueves':
+                    // Si es jueves, mostramos "Trabajas"
+                    document.getElementById('resultado').value = "Trabajas";
+                    break;
+                case 'viernes':
+                    // Si es viernes, mostramos "Trabajas"
+                    document.getElementById('resultado').value = "Trabajas";
+                    break;
+            
+                case 'sabado':
+                    // Si es sábado, mostramos "Descansito"
+                    document.getElementById('resultado').value = "Descansito";
+                    break;
+                case 'domingo':
+                    // Si es domingo, mostramos "Descansito"
+                    document.getElementById('resultado').value = "Descansito";
+                    break;
+            
+                default:
+                    // Si el día ingresado no es válido, mostramos una alerta
+                    alert('No existe ese día de la semana');
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

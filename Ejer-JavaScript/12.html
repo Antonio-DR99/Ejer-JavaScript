@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Rango</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contador de Números en un Rango</h1>
+        <p>Este programa te permite ingresar dos números. El programa calculará y mostrará cuántos números hay entre ellos (excluyéndolos). Simplemente ingresa el primer número y el segundo número, luego haz clic en "Calcular".</p>
+
+        <input type="text" id="num1" placeholder="Primer número">
+        <input type="text" id="num2" placeholder="Segundo número">
+        <input type="button" onclick="calcular()" value="Calcular">
+        <div id="contenedor"></div>
+    </div>
+
+    <script>
+        // Definimos la función calcular que se ejecuta cuando el usuario hace clic en el botón
+        function calcular(){
+            
+            // Obtenemos el primer número ingresado por el usuario y lo convertimos a entero
+            let num1 = parseInt(document.getElementById('num1').value);
+            
+            // Obtenemos el segundo número ingresado por el usuario y lo convertimos a entero
+            let num2 = parseInt(document.getElementById('num2').value);
+            
+            // Inicializamos una variable resultado para almacenar los números que vamos a mostrar
+            let resultado = "";
+            
+            // Empezamos un ciclo desde num1 hasta num2 (inclusive)
+            for(let i = num1; i <= num2; i++){
+                
+                // Concatenamos cada número i con un salto de línea "<br>" para que se muestre uno debajo del otro
+                resultado += i + "<br>";
+            }
+            // Mostramos los números concatenados dentro del div con id 'contenedor'
+            document.getElementById('contenedor').innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

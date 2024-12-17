@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Vector</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Imprimir Vector</h1>
+        <p>Este programa toma un vector de números del 1 al 10 y los imprime en líneas separadas. Haz clic en el botón "Imprimir" para ver el resultado.</p>
+        
+        <input type="button" onclick="imprimirVector()" value="Imprimir">
+        <div id="contenedor"></div>
+    </div>
+
+    <script>
+        // Se define un array llamado "vector" con los números del 1 al 10.
+        let vector = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; 
+    
+        // Se define una variable "resultado" como una cadena vacía. Esta almacenará los números que se imprimirán.
+        let resultado = ""; 
+    
+        // Se define una función llamada "imprimirVector"
+        function imprimirVector() {
+            // Inicia un ciclo for que recorrerá cada elemento del vector.
+            for (let i = 0; i < vector.length; i++) {
+                // En cada iteración del ciclo, se agrega el número actual del vector y un salto de línea <br> a la variable "resultado".
+                resultado += vector[i] + "<br>";
+            }
+    
+            // Después de completar el ciclo, el contenido de la variable "resultado" (que contiene todos los números con saltos de línea)
+            // se inserta dentro del div con id "contenedor".
+            document.getElementById('contenedor').innerHTML = resultado;
+        }
+    </script>
+    
+</body>
+</html>
+
+    

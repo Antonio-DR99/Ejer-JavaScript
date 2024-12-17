@@ -1,0 +1,83 @@
+/* Estilo general del body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Título */
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Párrafo introductorio */
+p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los campos de texto */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo para el botón */
+input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambiar el color del botón al pasar el mouse */
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* Resultado */
+#resultado {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Ejercicio 23: Estilo adicional para el contador de caracteres */
+.container h2 {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+

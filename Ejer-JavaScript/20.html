@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcriptor de ADN a ARN</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<!-- Escribir una función llamada transcriptor que reciba un string
+(una cadena de ADN) y retorne otro string (su complemento ARN).
+Los complementos son los siguientes:
+G -> C
+C -> G
+T -> A
+A -> U -->
+<body>
+    <div class="container">
+        <h1>Transcriptor de ADN a ARN</h1>
+        <p>Este programa convierte una cadena de ADN (secuencia de bases A, T, C, G) en su complemento ARN correspondiente, donde:</p>
+        <ul>
+            <li>A → U</li>
+            <li>T → A</li>
+            <li>C → G</li>
+            <li>G → C</li>
+        </ul>
+        <p>Introduce la secuencia de ADN en el campo de entrada y haz clic en "Mostrar" para obtener su complemento ARN.</p>
+        
+        <input type="text" id="string" class="input-field" placeholder="Ingresa una cadena ADN">
+        <input type="text" id="resultado" class="input-field" placeholder="Complemento ARN" readonly>
+        <input type="button" class="button" onclick="transcriptor();" value="Mostrar">
+    </div>
+
+    <script>
+        function transcriptor(){
+            let string = document.getElementById('string').value.toUpperCase(); 
+
+            let arn = "";
+
+            for(let i = 0; i < string.length; i++){
+                let adn = string[i]; 
+
+                switch (adn) {
+                    case "A":
+                        arn += "U";
+                        break;
+                    case "T":
+                        arn += "A";
+                        break;
+                    case "C":
+                        arn += "G";
+                        break;
+                    case "G":
+                        arn += "C";
+                        break;
+                    default:
+                        arn += "x";  // Indicar error si se ingresa un carácter no válido
+                        break;
+                }
+            }
+            document.getElementById('resultado').value = arn;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>FizzBuzz</h1>
+        <p>Este programa te permite ingresar un número y devolverá:
+            - "Fizz" si el número es múltiplo de 3.
+            - "Buzz" si es múltiplo de 5.
+            - "FizzBuzz" si es múltiplo de ambos.
+            - El mismo número si no cumple con ninguna de estas condiciones.</p>
+
+        <input type="text" id="num" placeholder="Escribe un número: ">
+        <input type="text" id="resultado" placeholder="Resultado" readonly>
+        <input type="button" onclick="fizzBuzz();" value="Calcular">
+    </div>
+
+    <script>
+        // Función que calcula el FizzBuzz
+        function fizzBuzz(){
+            // Obtiene el valor del input con id "num" y lo convierte a un número entero
+            let numero = parseInt(document.getElementById('num').value);
+    
+            // Verifica si el número es divisible tanto por 3 como por 5
+            if (numero % 3 === 0 && numero % 5 === 0) {
+                // Si es divisible por 3 y 5, establece el valor del input con id "resultado" como "FizzBuzz"
+                document.getElementById('resultado').value = "FizzBuzz";
+            } 
+            // Si el número es divisible solo por 3
+            else if (numero % 3 === 0){
+                // Establece el valor del input con id "resultado" como "Fizz"
+                document.getElementById('resultado').value = "Fizz";
+            } 
+            // Si el número es divisible solo por 5
+            else if (numero % 5 === 0){
+                // Establece el valor del input con id "resultado" como "Buzz"
+                document.getElementById('resultado').value = "Buzz";
+            } 
+            // Si el número no es divisible ni por 3 ni por 5
+            else {
+                // Establece el valor del input con id "resultado" como el mismo número
+                document.getElementById('resultado').value = numero;
+            }
+        }
+    </script>
+    
+</body>
+</html>

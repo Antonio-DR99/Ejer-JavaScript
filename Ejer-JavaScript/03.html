@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Números del 1 al 100</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mostrar Números del 1 al 100</h1>
+        <p>Este programa muestra los números del 1 al 100 utilizando un bucle. Solo tienes que hacer clic en el botón "Mostrar" y el sistema generará los números en el área abajo del botón.</p>
+        
+        <input type="button" onclick="calcular()" value="Mostrar">
+        <div id="contenedor"></div>
+    </div>
+    
+    <script>
+        // Función para mostrar los números del 1 al 100
+        function calcular(){
+            // Empezamos con el número 1
+            let num = 1;
+            // Variable para almacenar los resultados
+            let resultado = ''; 
+
+            // Usamos un bucle while para recorrer los números del 1 al 100
+            while (num <= 100) {
+                // Añadimos el número actual al resultado con un salto de línea
+                resultado += num + "<br>";
+                // Incrementamos el número en cada iteración
+                num++;
+            }
+
+            // Mostramos los números generados en el contenedor
+            document.getElementById('contenedor').innerHTML = resultado; 
+        }
+    </script>
+</body>
+</html>

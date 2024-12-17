@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Calculadora Básica</title>
+</head>
+<body>
+    <!-- Contenedor principal con la clase "container" -->
+    <div class="container">
+        <!-- Introducción para el usuario -->
+        <h2>Calculadora Básica</h2>
+        <p>
+            Este programa te permite realizar operaciones matemáticas básicas. 
+            Solo necesitas ingresar dos números y el operador deseado (como +, -, *, /). 
+            Luego, presiona el botón "Calcular" para obtener el resultado de la operación.
+        </p>
+
+        <input type="text" id="num1" class="input-field" placeholder="Introduce el primer número: ">
+        <input type="text" id="num2" class="input-field" placeholder="Introduce el segundo número: ">
+        <input type="text" id="operador" class="input-field" placeholder="Introduce el operador (+, -, *, /): ">
+        <input type="text" id="resultado" class="input-field" placeholder="Resultado" disabled>
+        <input type="button" class="button" onclick="calcular();" value="Calcular">
+    </div>
+
+    <script>
+        // Función para realizar el cálculo basado en el operador ingresado
+        function calcular() {
+            // Obtener los valores de los inputs
+            let num1 = parseFloat(document.getElementById('num1').value); // Primer número
+            let num2 = parseFloat(document.getElementById('num2').value); // Segundo número
+            let operador = document.getElementById('operador').value; // Operador
+
+            // Realizar el cálculo según el operador
+            switch (operador) {
+                case '+':
+                    let suma = (num1 + num2); // Realizar la suma
+                    document.getElementById('resultado').value = num1 + " + " + num2 + " = " + suma; // Mostrar el resultado
+                    break;
+
+                case '-':
+                    let resta = (num1 - num2); // Realizar la resta
+                    document.getElementById('resultado').value = num1 + " - " + num2 + " = " + resta; // Mostrar el resultado
+                    break;
+
+                case '*':
+                    let multiplicacion = (num1 * num2); // Realizar la multiplicación
+                    document.getElementById('resultado').value = num1 + " * " + num2 + " = " + multiplicacion; // Mostrar el resultado
+                    break;
+
+                case '/':
+                    if (num2 !== 0) {
+                        let division = (num1 / num2); // Realizar la división
+                        document.getElementById('resultado').value = num1 + " / " + num2 + " = " + division; // Mostrar el resultado
+                    } else {
+                        document.getElementById('resultado').value = "Error: División por cero"; // Mostrar error si se intenta dividir por 0
+                    }
+                    break;
+
+                default:
+                    document.getElementById('resultado').value = "Operador no válido"; // Mostrar error si el operador no es válido
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

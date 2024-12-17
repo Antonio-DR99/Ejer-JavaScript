@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Calcular Impuestos</title>
+</head>
+<body>
+    <!-- Contenedor principal con los estilos de la plantilla -->
+    <div class="container">
+        <!-- Introducción para el usuario -->
+        <h2>Calculadora de Impuestos</h2>
+        <p>
+            Este programa calcula el monto de impuestos que una persona debe pagar, basado en su edad e ingresos.
+            Si la edad es mayor o igual a 18 años y los ingresos son mayores o iguales a 1000, se calculará el 40% de los ingresos como impuesto.
+        </p>
+
+        <!-- Campos de entrada para la edad y los ingresos -->
+        <input type="text" placeholder="Ingresa tu edad" id="edad" class="input-field">
+        <input type="text" placeholder="Ingresa tus ingresos" id="ingresos" class="input-field">
+        
+        <!-- Campo para mostrar el resultado -->
+        <input type="text" placeholder="Resultado" id="resultado" class="input-field" disabled>
+
+        <!-- Botón para ejecutar el cálculo -->
+        <input type="button" onclick="calcularImpuestos();" value="Calcular" class="button">
+    </div>
+
+    <script>
+        // Función que calcula los impuestos basado en la edad y los ingresos
+        function calcularImpuestos() {
+            // Obtener los valores de edad e ingresos desde los campos de entrada
+            let edad = parseInt(document.getElementById('edad').value);
+            let ingresos = parseFloat(document.getElementById('ingresos').value);
+
+            // Verificar si la persona cumple con los requisitos para el cálculo del impuesto
+            if (edad >= 18 && ingresos >= 1000) {
+                // Si se cumplen las condiciones, calcular el 40% de los ingresos
+                let total = (ingresos * 0.40);
+                // Mostrar el resultado del cálculo en el campo de texto de resultado
+                document.getElementById('resultado').value = total;
+            } else {
+                // Si no se cumplen las condiciones, mostrar 0 como resultado
+                document.getElementById('resultado').value = '0';
+            }
+        }
+    </script>
+</body>
+</html>

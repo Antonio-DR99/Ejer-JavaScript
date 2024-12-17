@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Multiplicación de Vector</title>
+</head>
+<body>
+    <!-- Contenedor principal con los estilos de la plantilla -->
+    <div class="container">
+        <!-- Introducción para el usuario -->
+        <h2>Multiplicación de Elementos en un Vector</h2>
+        <p>
+            Este programa recibe un vector de números y calcula la multiplicación de todos sus elementos. 
+            Solo presiona "Calcula" para ver el resultado de la multiplicación de los valores en el vector.
+        </p>
+
+        <!-- Campo para mostrar el resultado de la multiplicación -->
+        <input type="text" id="arrays" placeholder="Resultado" class="input-field" disabled>
+        <input type="button" onclick="multiplicarVector();" value="Calcula" class="button">
+    </div>
+
+    <script>
+        // Función que multiplica todos los elementos de un vector
+        function multiplicarVector(){
+            // Definir un vector con valores predeterminados
+            let vector = [10, 20, 30, 40, 50]; 
+            let multi = 1;  // Inicializamos la variable de multiplicación
+
+            // Recorrer todos los elementos del vector
+            for (let i = 0; i < vector.length; i++) {
+                multi *= vector[i];  // Multiplicamos cada elemento con el resultado anterior
+            }
+
+            // Mostrar el resultado de la multiplicación en el campo de texto
+            document.getElementById('arrays').value = multi;
+        }
+    </script>
+</body>
+</html>

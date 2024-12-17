@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Precio Final con IVA</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Precio Final con IVA</h1>
+        <p>Este programa calcula el precio final de un producto después de agregarle el IVA (21%). Solo necesitas ingresar el precio del producto y el sistema calculará automáticamente el precio final con el IVA incluido.</p>
+
+        <input type="text" placeholder="Precio del producto" id="precio">
+        <input type="text" placeholder="Precio final con IVA" id="precioFinal" readonly>
+        <input type="button" onclick="calcular()" value="Calcular">
+    </div>
+
+    <script>
+        // Función para calcular el precio final con IVA
+        function calcular() {
+            // Obtenemos el valor del precio introducido por el usuario
+            let precio = parseFloat(document.getElementById('precio').value);
+            
+            // Definimos el IVA como una constante del 21%
+            const iva = 0.21; 
+
+            // Calculamos el precio final sumando el IVA al precio inicial
+            let precioFinal = precio + (precio * iva);
+
+            // Mostramos el precio final con IVA en el campo correspondiente
+            document.getElementById('precioFinal').value = precioFinal.toFixed(2); // Redondeamos a 2 decimales
+        }
+    </script>
+</body>
+</html>

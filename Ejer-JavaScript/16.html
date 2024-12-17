@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Sumar Vector</title>
+</head>
+<body>
+    <!-- Introducción para el usuario -->
+    <div class="container">
+        <h2>Sumar los Elementos de un Vector</h2>
+        <p>
+            Este programa calcula la suma de los elementos en un vector de números. Al hacer clic en el botón "Suma Vector", 
+            obtendrás el resultado de la suma de los números predefinidos en el vector.
+        </p>
+
+        <!-- Campo de resultado y botón para realizar la suma -->
+        <input type="text" placeholder="Resultado: " id="resultado" readonly>
+        <input type="button" onclick="sumarVector()" value="Suma Vector">
+    </div>
+
+    <script>
+        // Función que calcula la suma de todos los elementos en el vector
+        function sumarVector(){
+            // Definimos el vector de números
+            let numeros = [10, 20, 30, 40, 50];
+            
+            // Inicializamos la variable suma en 0
+            let suma = 0;
+            
+            // Recorremos el vector y sumamos cada elemento al total
+            for (let i = 0; i < numeros.length; i++) {
+                suma += numeros[i];  // Añadimos el valor actual del vector a la suma total
+            }
+            
+            // Mostramos el resultado en el campo de entrada con id 'resultado'
+            document.getElementById('resultado').value = suma;
+        }
+    </script>
+</body>
+</html>

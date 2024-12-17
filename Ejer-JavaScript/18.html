@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Eliminador de Ceros</title>
+</head>
+<body>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Introducción breve para el usuario -->
+        <div class="intro">
+            <h1>Bienvenido al Eliminador de Ceros</h1>
+            <p>Este programa te permite ingresar una serie de números, y al presionar el botón, eliminará los ceros de la lista. ¡Prueba ingresando varios números, incluyendo ceros!</p>
+        </div>
+
+        <!-- Campo de entrada para números -->
+        <input type="text" id="num" placeholder="Ingrese números">
+        <input type="button" onclick="zermineitor();" value="Mostrar">
+
+        <!-- Espacio donde se mostrarán los resultados -->
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        // Declaramos un array vacío llamado 'numeros' donde almacenaremos los números ingresados por el usuario
+        let numeros = [];
+    
+        // Función que se ejecuta cuando el usuario hace clic en el botón
+        function zermineitor() {
+            // Obtener el valor ingresado por el usuario en el campo de texto con id 'num'
+            let num = document.getElementById('num').value; 
+    
+            // Convertir el valor ingresado a un número entero
+            let numero = parseInt(num); 
+    
+            // Agregar el número convertido al array 'numeros'
+            numeros.push(numero);
+    
+            // Crear un nuevo array vacío llamado 'numerosSinCeros' para almacenar los números sin ceros
+            let numerosSinCeros = [];
+    
+            // Usamos un bucle 'for' para recorrer todos los números del array 'numeros'
+            for (let i = 0; i < numeros.length; i++) {
+                // Comprobamos si el número actual no es igual a cero
+                if (numeros[i] !== 0) {
+                    // Si el número no es cero, lo agregamos al array 'numerosSinCeros'
+                    numerosSinCeros.push(numeros[i]);
+                }
+            }
+    
+            // Mostrar los números sin ceros en el elemento con id 'resultado' de la página HTML
+            // Los números se unen con una coma y un espacio gracias al método 'join(', ')'
+            document.getElementById('resultado').innerHTML = numerosSinCeros.join(', ');
+        }
+    </script>
+    
+
+</body>
+</html>
+

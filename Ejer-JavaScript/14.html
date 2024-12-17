@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Aes</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contador de A's en una Palabra</h1>
+        <p>Este programa permite contar cuántas veces aparece la letra "a" en una palabra que ingreses. Escribe una palabra y el programa te mostrará cuántas veces la letra "a" aparece en ella.</p>
+
+        <input type="text" id="palabra" placeholder="Escribe una palabra">
+        <input type="text" id="resultado" placeholder="Resultado" readonly>
+        <input type="button" onclick="numeroDeAes();" value="Calcular">
+    </div>
+
+    <script>
+        function numeroDeAes(){
+            // Obtener el valor ingresado en el campo de texto con id 'palabra' y convertirlo a minúsculas
+            let palabra = document.getElementById('palabra').value.toLowerCase(); 
+            
+            // Inicializar el contador que llevará el número de veces que aparece la letra 'a'
+            let contador = 0; 
+            
+            // Bucle 'for' para recorrer cada carácter de la palabra
+            for(i = 0; i < palabra.length; i++) {  // Se debe cambiar i<=palabra.length por i<palabra.length para evitar error
+                // Verificar si el carácter actual es igual a la letra 'a'
+                if (palabra[i] === 'a') {
+                    // Si es una 'a', incrementar el contador
+                    contador++;
+                }
+            }
+    
+            // Mostrar el resultado del contador en el campo de texto con id 'resultado'
+            document.getElementById('resultado').value = contador;
+        }
+    </script>
+</body>
+</html>

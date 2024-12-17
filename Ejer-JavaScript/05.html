@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina la Contraseña</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Adivina la Contraseña</h1>
+        <p>En este juego, tienes 3 intentos para adivinar la contraseña generada aleatoriamente. Si aciertas en alguno de los intentos, el juego terminará y verás un mensaje de éxito. Si fallas, se te indicarán los intentos restantes hasta que llegues a 0, y entonces perderás.</p>
+
+        <input type="text" id="password" placeholder="Introduce la contraseña">
+        <input type="button" onclick="verificar()" value="Intentos">
+        <div id="contenedor"></div>
+    </div>
+
+    <script>
+        // Se genera la contraseña aleatoria entre 0 y 4 (inclusive)
+        const password = Math.floor(Math.random() * 5); 
+        // Definimos el número de intentos disponibles (3 intentos)
+        let intentos = 3; 
+        console.log(password);  // Para depuración, muestra la contraseña en la consola
+
+        // Función para verificar la contraseña introducida
+        function verificar() {
+            // Obtenemos el valor introducido por el usuario y lo convertimos a número
+            const num = parseInt(document.getElementById('password').value);
+            // Seleccionamos el contenedor donde se mostrará el mensaje
+            const mensaje = document.getElementById('contenedor');
+
+            // Comprobamos si el número introducido es igual a la contraseña generada
+            if (num == password) {
+                // Si acierta, mostramos un mensaje de éxito
+                document.getElementById('contenedor').innerHTML = "Adivinaste la contraseña!";
+            } else {
+                // Si no acierta, restamos un intento
+                intentos--;
+                if (intentos > 0) {
+                    // Si todavía tiene intentos restantes, mostramos cuántos quedan
+                    document.getElementById('contenedor').innerHTML = "Te quedan: " + intentos;
+                } else if (intentos == 0) {
+                    // Si ya no quedan intentos, mostramos un mensaje de pérdida
+                    document.getElementById('contenedor').innerHTML = "Perdiste";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+

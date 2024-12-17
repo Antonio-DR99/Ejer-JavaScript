@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Contador de Likes</title>
+</head>
+<body>
+    <!-- Introducción para el usuario -->
+    <div class="container">
+        <h2>Conversor de Números a Formato K y M</h2>
+        <p>
+            Este programa te permite convertir un número a un formato más compacto utilizando el sufijo "K" para miles y "M" para millones. 
+            Solo ingresa un número en el campo correspondiente y presiona "Mostrar" para ver el resultado.
+        </p>
+
+        <!-- Inputs para los datos de entrada y salida -->
+        <input type="text" id="num" placeholder="Introduce un numero: ">
+        <input type="text" id="resultado" placeholder="Resultado:" readonly>
+        <input type="button" onclick="likes();" value="Mostrar">
+    </div>
+
+    <script>
+        // Función que convierte el número a formato K o M según corresponda
+        function likes() {
+            let num = parseInt(document.getElementById('num').value);
+    
+            // Si el número es mayor o igual a un millón
+            if (num >= 1000000) {
+                let millones = (num / 1000000).toFixed(1); // Redondeamos a un decimal
+                document.getElementById('resultado').value = millones + "M"; // Agregamos el sufijo M
+    
+            // Si el número es mayor o igual a mil pero menor que un millón
+            } else if (num >= 1000) {
+                let mil = (num / 1000).toFixed(1); // Redondeamos a un decimal
+                document.getElementById('resultado').value = mil + "K"; // Agregamos el sufijo K
+    
+            } else {
+                // Si el número es menor a mil, lo mostramos tal cual
+                document.getElementById('resultado').value = num;
+            }
+        }
+    </script>
+</body>
+</html>
+

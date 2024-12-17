@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalizar la Primera Letra</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<!-- El programa tiene como objetivo tomar una palabra escrita por el usuario, 
+y capitalizar (poner en mayúscula) únicamente la primera letra de la palabra. 
+Después, mostrará el resultado en otro campo de texto. -->
+
+<body>
+    <div class="container">
+        <h1 class="title">Capitaliza la Primera Letra</h1>
+        <p class="description">Este programa toma una palabra que ingreses y convierte su primera letra a mayúscula, 
+        dejando las demás letras tal como están.</p>
+
+        <input type="text" id="string" class="input-field" placeholder="Escribe una palabra">
+        <input type="text" id="resultado" class="input-field" placeholder="Resultado" readonly>
+        <input type="button" onclick="mayuculizar();" class="btn" value="Mostrar">
+    </div>
+
+
+    <script>
+        function mayuculizar(){
+            // Obtener el valor ingresado por el usuario en el campo de texto con el id 'string'
+            let string = document.getElementById('string').value; 
+    
+            // Inicializar una variable vacía que almacenará el resultado final
+            let stringFinal = ""; 
+    
+            // Iniciar un bucle para recorrer cada carácter de la cadena 'string'
+            for (let i = 0; i < string.length; i++){
+                
+                // Si estamos en la primera letra (índice 0)
+                if (i == 0) {
+                    // Convertir la primera letra a mayúscula y agregarla al stringFinal
+                    stringFinal += string[i].toUpperCase(); 
+                } else {
+                    // Si no es la primera letra, solo agregar la letra tal como está
+                    stringFinal += string[i];
+                }
+            }
+    
+            // Asignar el resultado final al campo de texto con id 'resultado'
+            document.getElementById('resultado').value = stringFinal;
+        }
+    </script>
+</body>
+</html>

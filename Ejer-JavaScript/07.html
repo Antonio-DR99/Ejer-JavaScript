@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Validación de Contraseña</title>
+</head>
+<body>
+    <!-- Contenedor principal con estilos de la plantilla -->
+    <div class="container">
+        <!-- Introducción para el usuario -->
+        <h2>Validación de Contraseña</h2>
+        <p>
+            Este programa verifica si la contraseña ingresada es válida. 
+            Ingrese una contraseña y presione "Ingresar" para comprobar si es correcta.
+        </p>
+
+        <!-- Campos para ingresar la contraseña y mostrar el resultado -->
+        <input type="text" placeholder="Ingresa contraseña" id="password" class="input-field">
+        <input type="text" placeholder="Resultado" id="resultado" class="input-field" disabled>
+        <input type="button" onclick="passwordValida();" value="Ingresar" class="button">
+    </div>
+
+    <script>
+        // Función que valida la contraseña ingresada
+        function passwordValida() {
+            // Obtener el valor ingresado en el campo de contraseña
+            let password = document.getElementById('password').value;
+
+            // Comparar la contraseña ingresada con las contraseñas válidas
+            if (password == '2Fj(jjbFsuj') {
+                document.getElementById('resultado').value = "Verdadero"; // Contraseña válida
+            } else if (password == 'eoZiugBf&g9') {
+                document.getElementById('resultado').value = "Verdadero"; // Otra contraseña válida
+            } else {
+                document.getElementById('resultado').value = "Falso"; // Contraseña no válida
+            }
+        }
+    </script>
+</body>
+</html>

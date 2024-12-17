@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Capitalizar Palabras</title>
+</head>
+<body>
+    <!-- Introducción para el usuario -->
+    <div class="container">
+        <h1>Capitalizar Palabras</h1>
+        <p>Este programa toma una frase que ingreses, convierte la primera letra de cada palabra a mayúscula y el resto a minúsculas. Escribe una frase en el cuadro de texto y haz clic en "Mostrar" para ver el resultado.</p>
+        
+        <input type="text" id="string" placeholder="Escribe tu frase">
+        <input type="text" id="resultado" placeholder="Resultado" readonly>
+        <input type="button" onclick="mayusculaPalabra();" value="Mostrar">
+    </div>
+
+    <script>
+        // Función para capitalizar la primera letra de cada palabra en una cadena de texto
+        function mayusculaPalabra() {
+            // Obtener la cadena de texto ingresada por el usuario
+            let string = document.getElementById('string').value; 
+            // Inicializar una variable para almacenar el resultado procesado
+            let stringM = "";
+
+            // Recorrer la cadena carácter por carácter
+            for (let i = 0; i < string.length; i++) {
+                // Verificar si es la primera letra (i === 0) o si está precedida por un espacio
+                if (i === 0 || string[i - 1] === " ") {
+                    // Convertir a mayúscula y agregar al resultado
+                    stringM += string[i].toUpperCase();
+                } else {
+                    // Convertir a minúscula y agregar al resultado
+                    stringM += string[i].toLowerCase();
+                }
+            }
+
+            document.getElementById('resultado').value = stringM;
+        }
+    </script>
+</body>
+</html>

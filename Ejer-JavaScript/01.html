@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Divisibilidad</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Verificador de Divisibilidad</h1>
+        <p>Este programa verifica si el número que introduces es divisible entre 2. Solo tienes que escribir un número en el campo correspondiente y hacer clic en "Calcular". El resultado te indicará si el número es divisible o no entre 2.</p>
+
+        <input type="text" placeholder="Introduce un número" id="num">
+        <input type="text" placeholder="Resultado" id="resultado" readonly>
+        <input type="button" onclick="calcular()" value="Calcular">
+    </div>
+
+    <script>
+        function calcular(){
+            let num= parseInt(document.getElementById('num').value); 
+
+            if (num%2==0) {
+                document.getElementById('resultado').value="Es divisible"; 
+                
+            }else{
+                document.getElementById('resultado').value="No es divisible"
+            }
+        }
+    </script>
+
+</body>
+</html>

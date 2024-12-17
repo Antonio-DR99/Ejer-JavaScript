@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Contador de Caracteres</title>
+</head>
+<body>
+    <!-- Introducción para el usuario -->
+    <div class="container">
+        <h2>Contador de Caracteres en una Cadena</h2>
+        <p>
+            Este programa te permite contar cuántas veces aparece un carácter específico en una palabra o frase. 
+            Solo necesitas escribir la palabra o frase en el primer campo, el carácter a buscar en el segundo, 
+            y presionar el botón "Mostrar" para ver el resultado.
+        </p>
+
+        <!-- Inputs para los datos de entrada y salida -->
+        <input type="text" id="string" placeholder="Escribe una palabra">
+        <input type="text" id="caracter" placeholder="Escribe el caracter que quieres buscar">
+        <input type="text" id="resultado" placeholder="Resultado">
+        <input type="button" onclick="caracterizador();" value="Mostrar">
+    </div>
+
+    <script>
+        // Función que cuenta cuántas veces aparece un carácter en una cadena
+        function caracterizador() {
+            // Obtener la cadena de texto ingresada por el usuario y convertirla a minúsculas
+            let string = document.getElementById('string').value.toLowerCase();
+
+            // Obtener el carácter a buscar ingresado por el usuario
+            let caracter = document.getElementById('caracter').value;
+
+            // Inicializar un contador para llevar la cuenta de las apariciones
+            let contador = 0;
+
+            // Recorrer la cadena de texto carácter por carácter
+            for (let i = 0; i <= string.length; i++) {
+                // Verificar si el carácter actual coincide con el carácter buscado
+                if (string[i] === caracter) {
+                    // Incrementar el contador si hay coincidencia
+                    contador++;
+                }
+            }
+
+            // Mostrar el número total de coincidencias en el campo de resultado
+            document.getElementById('resultado').value = contador;
+        }
+    </script>
+</body>
+</html>
